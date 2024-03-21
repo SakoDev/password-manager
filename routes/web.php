@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Account\AccountIndex;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/account', function () {
+        return view('account');
+    })->name('account');
+    Route::get('/accounts',AccountIndex::class)->name('account-index');
+
 });
